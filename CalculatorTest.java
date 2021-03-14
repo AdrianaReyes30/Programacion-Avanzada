@@ -1,32 +1,27 @@
 
-package tip03;
+package tip04;
 
 public class CalculatorTest {
     public static void main(String[] args) {
         
-       Calculator calc = new Calculator();
-       
-       //Use the Calculator object and arguments supplied to findTotal()
-       //to print the total for each person
+        Calculator calc = new Calculator();
+        
+        //Name your friends
+        calc.findTotal(10, null);
+        calc.findTotal(12, null);
+        calc.findTotal(9, null);
+        calc.findTotal(8, null);
+        calc.findTotal(7, null);
+        calc.findTotal(15, "Alex");
+        calc.findTotal(11, null);
+        calc.findTotal(30, "Forgetful");
+        
+        System.out.println("Total without T&t: " + calc.total());
+        
+        
+        
 
-       calc.findTotal(10, "persona 1");
-       calc.findTotal(12, "persona 2");
-       calc.findTotal(9, "persona 3");
-       calc.findTotal(8, "persona 4");
-       calc.findTotal(7, "persona 5");
-       calc.findTotal(15, "persona 6");
-       calc.findTotal(11, "persona 7");
-       calc.findTotal(30, "persona 8");
+        //Find and print the entire table's total, including tax and tip
        
-       /*This is what everyone owes before tax and tip:
-       Person 1: $10
-       Person 2: $12
-       Person 3: $9
-       Person 4: $8
-       Person 5: $7
-       Person 6: $15 (Alex)
-       Person 7: $11
-       Person 8: $30
-       */
-    }    
+    } 
 }
