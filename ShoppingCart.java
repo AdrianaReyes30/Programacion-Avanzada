@@ -1,30 +1,46 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.example;
 
-/**
- *
- * @author anshenoy
- */
 public class ShoppingCart {
-    public static void main (String[] args){
-        String custName = "Steve Smith";
-        String firstName;
-        int spaceIdx;
+
+    public static void main(String[] args) {
+        String custName = "Mary Smith";
+        String itemDesc = "Shirt";
+
+	// numeric fields
+        double price = 21.99;
+        int quantity = 0;
+        double tax = 1.04;
+	double total;
+	String message = custName+ " wants to purchase " +quantity+ " " +itemDesc;
+
+	// Calculating total cost
+        total = (price*quantity)*tax;
+
         
-        // Get the index of the space character (" ") in custName. 
-
-spaceIdx = custName.indexOf(' ');
-System.out.println(spaceIdx);
-String name =custName.substring(0,spaceIdx);
-System.out.println(name);
-        // Use the substring method parse out the first name and print it.
-
-
+        // Declare outOfStock variable and initialize it
+        boolean outOfStock;
+        outOfStock=false;
+        
+        // Test quantity and modify message if quantity > 1.  
+        if(quantity >1)
+        {
+            itemDesc ="shirts";
+            message= custName+" wants to purchase "+quantity+" "+itemDesc;
+            System.out.println(message);
+            System.out.println("the total price is : "+total);
+        }
+        
+        // Test outOfStock and notify user in either case.  
+        if (quantity<1)
+        {
+            outOfStock=true;
+            System.out.println("the item"+itemDesc+"is out of stock: "+outOfStock);
+        }
+        
+        
     }
-
     
 }
+
+
